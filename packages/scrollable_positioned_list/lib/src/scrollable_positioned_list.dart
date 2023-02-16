@@ -466,6 +466,9 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
       primary.scrollController.jumpTo(0);
       primary.target = index;
       primary.alignment = alignment;
+      if (widget.onItemKey != null) {
+        _lastTargetKey = widget.onItemKey!(primary.target);
+      }
     });
   }
 
